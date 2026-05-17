@@ -1,0 +1,28 @@
+local remote = game.ReplicatedStorage.Knit.Knit.Services.DivergentFistService.RE.Activated
+
+local debounce = false
+
+local mt = getrawmetatable(game)
+setreadonly(mt, false)
+
+local oldNamecall = mt.__namecall
+
+mt.__namecall = newcclosure(function(self, ...)
+    local method = getnamecallmethod()
+    local args = {...}
+
+    if self == remote and method == "FireServer" then
+        if not debounce then
+            debounce = true
+
+            task.delay(0.36, function()
+                remote:FireServer(unpack(args))
+                debounce = false
+            end)
+        end
+    end
+
+    return oldNamecall(self, ...)
+end)
+
+setreadonly(mt, true)
