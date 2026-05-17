@@ -87,4 +87,5 @@ local val = {
     ["Rubrikiko"] = 8,
     ["Jelly Moby"]   = 40,
     ["Sammyni Cakini"]   = 20,
+    ["La Anniversary Grande"]   = 1.5,
 }
