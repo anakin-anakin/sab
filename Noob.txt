@@ -1,28 +1,76 @@
-local remote = game.ReplicatedStorage.Knit.Knit.Services.DivergentFistService.RE.Activated
-
-local debounce = false
-
-local mt = getrawmetatable(game)
-setreadonly(mt, false)
-
-local oldNamecall = mt.__namecall
-
-mt.__namecall = newcclosure(function(self, ...)
-    local method = getnamecallmethod()
-    local args = {...}
-
-    if self == remote and method == "FireServer" then
-        if not debounce then
-            debounce = true
-
-            task.delay(0.36, function()
-                remote:FireServer(unpack(args))
-                debounce = false
-            end)
-        end
-    end
-
-    return oldNamecall(self, ...)
-end)
-
-setreadonly(mt, true)
+local VALUABLES = {
+    ["Dragon Cannelloni"]         = 27,
+    ["Love Love Bear"]            = 285,
+    ["Bunny And Eggy"]            = 14,
+    ["Meowl"]                     = 303,
+    ["Skibidi Toilet"]            = 200,
+    ["Headless Horseman"]         = 3500,
+    ["Strawberry Elephant"]       = 580,
+    ["Griffin"]                   = 130,
+    ["Garama and Madundung"]      = 1.8,
+    ["La Supreme Combinasion"]    = 57.5,
+    ["Fortunu and Cashuru"]       = 5,
+    ["Celestial Pegasus"]         = 4.5,
+    ["Foxini Lanternini"]         = 11,
+    ["Capitano Moby"]             = 5.8,
+    ["Burguro And Fryuro"]        = 3.7,
+    ["Fragrama and Chocrama"]     = 6.5,
+    ["Ketupat Bros"]              = 18,
+    ["Elefanto Frigo"]            = 140,
+    ["Cerberus"]                  = 7.5,
+    ["Rosey and Teddy"]           = 12.5,
+    ["Hydra Dragon Cannelloni"]   = 27,
+    ["Ginger Gerat"]              = 42,
+    ["Spooky and Pumpky"]         = 6.5,
+    ["Dragon Gingerini"]          = 96,
+    ["Cash or Card"]              = 7.7,
+    ["La Casa Boo"]               = 19,
+    ["Reinito Sleighito"]         = 6.7,
+    ["Cooki and Milki"]           = 5.5,
+    ["Popcuru and Fizzuru"]       = 4.4,
+    ["Cloverat Clapat"]           = 7.6,
+    ["Festive 67"]                = 5,
+    ["Boppin Bunny"]              = 5.5,
+    ["Los Amigos"]                = 5.7,
+    ["Sammyni Fattini"]           = 3.5,
+    ["La Food Combinasion"]       = 4.5,
+    ["Los Sekolahs"]              = 6.4,
+    ["Signore Carapace"]          = 900,
+    ["Antonio"]                   = 215,
+    ["Tirilikalika Tirilikalako"] = 15,
+    ["La Secret Combinasion"]     = 1.1,
+    ["Tralaledon"]                = 2,
+    ["Dug dug dug"]               = 25,
+    ["Hydra Bunny"]               = 37,
+    ["Fragola La La La"]          = 7.2,
+    ["Quackini Snackini"]         = 9.5,
+    ["Celularcini Viciosini"]     = 23,
+    ["Globa Steppa"]              = 295,
+    ["Pancake and Syrup"]         = 205,
+    ["John Doe"]                  = 7,
+    ["Guest 666"]                 = 18,
+    ["Digi Narwhal"]              = 64,
+    ["Fishino Clownino"]          = 97,
+    ["John Pork"]                 = 500,
+    ["Arcadragon"]                = 600,
+    ["Money Money Reindeer"]      = 7.9,
+    ["Gym Bros"]                  = 7,
+    ["Los Chillis"]               = 24,
+    ["Swag Soda"]                 = 1.8,
+    ["Swaggy Soda"]               = 2.6,
+    ["Kalika Bros"]               = 55,
+    ["Chillin Chili"]             = 4.8,
+    ["Los Hackers"]               = 35,
+    ["Pretzo Robo"]               = 1.5,
+    ["Money Money Bros"]          = 6,
+    ["Ginger Cisterna"]           = 2.6,
+    ["Hopilikalika Hopilikalako"] = 2.7,
+    ["Gold Gold Gold"]            = 2.3,
+    ["Orcaledon"]                 = 1.6,
+    ["Los Bros"]                  = 1.2,
+    ["Rubrikiko"]                 = 10,
+    ["Los Tacoritas"]             = 8,
+    ["Jelly Moby"]                = 40,
+    ["Sammyni Cakini"]            = 20,
+    ["Rico Dinero"]               = 38,
+}
