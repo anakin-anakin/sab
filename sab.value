@@ -1,12 +1,11 @@
 local val = {
-    ["Headless Horseman"]        = 3500,
-    ["Signore Carapace"]         = 1200,
+    ["Headless Horseman"]        = 4000,
+    ["Signore Carapace"]         = 1100,
     ["Arcadragon"]               = 600,
     ["Strawberry Elephant"]      = 600,
-    ["John Pork"]                = 500,
-    ["Globa Steppa"]             = 295,
+    ["John Pork"]                = 400,
     ["Love Love Bear"]           = 285,
-    ["Meowl"]                    = 280,
+    ["Meowl"]                    = 275,
     ["Antonio"]                  = 215,
     ["Skibidi Toilet"]           = 200,
     ["Pancake And Syrup"]        = 150,
@@ -88,4 +87,5 @@ local val = {
     ["Los Sweethearts"]          = 1,
     ["Orcaledon"]                = 1,
     ["Rosseti Tualleti"]         = 1,
+    ["Globa Steppa"]             = 32,
 }
