@@ -21,6 +21,7 @@ local val = {
     ["Ginger Gerat"]             = 50,
     ["Rico Dinero"]              = 40,
     ["Jelly Moby"]               = 40,
+    ["Globa Steppa"]             = 32,
     ["Coco And Mango"]           = 30,
     ["Duggy Bros"]               = 30,
     ["Hydra Dragon Cannelloni"]  = 29,
@@ -89,5 +90,4 @@ local val = {
     ["Los Sweethearts"]          = 1,
     ["Orcaledon"]                = 1,
     ["Rosseti Tualleti"]         = 1,
-    ["Globa Steppa"]             = 32,
 }
