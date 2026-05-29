@@ -1,5 +1,5 @@
 local val = {
-    ["Headless Horseman"]        = 4000,
+    ["Headless Horseman"]        = 6050,
     ["Signore Carapace"]         = 1100,
     ["Arcadragon"]               = 600,
     ["Strawberry Elephant"]      = 600,
